@@ -8,9 +8,14 @@
   },
   "author": "Justin Josey",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
   "dependencies": {
     "body-parser": "^1.18.1",
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "jsonwebtoken": "^8.0.1",
+    "mongoose": "^4.11.13",
+    "password-hash": "^1.2.2"
   }
 }
