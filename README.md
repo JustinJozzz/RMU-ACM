@@ -9,6 +9,7 @@ Schedule:
 | Week       | Topic           | Date  |
 | ------------- |:-------------:| -----:|
 | 1      | Introduction to Node JS and Express | 9/21/2017 |
+| 2      | Setting Up Database and User Authentication | 9/28/2017 |
 
 Our Slack Channel: https://rmuacm.slack.com
 
