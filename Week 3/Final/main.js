@@ -8,6 +8,8 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+var properties = ['from', 'to', 'subject', 'text'];
+
 var transportSetup = {
     host: 'smtp.gmail.com',
     port: 587,
@@ -20,20 +22,25 @@ var transportSetup = {
 
 var transport = nodemailer.createTransport(transportSetup);
 
-rl.question('Who would you like to send the email to? ', function(answer) {
-    var mailOptions = {
-        from: 'dustystick624@gmail.com',
-        to: answer,
-        subject: 'Hello',
-        text: 'yo sup dawg'
-    };
+var mailOptions = {};
 
-    transport.sendMail(mailOptions, function (error, info) {
-        if(error) {
-            return console.log(error);
+getProperties();
+
+function getProperties() {
+    var currentProp = properties.pop()
+    rl.question(currentProp + ': ', function(answer) {
+        mailOptions[currentProp] = answer;
+        if(properties.length > 0) {
+            getProperties();
         }
-        console.log('Message sent'+info.messageId);
-    });
-
-    rl.close();
-});
+        else {
+            transport.sendMail(mailOptions, function (error, info) {
+                if(error) {
+                    return console.log(error);
+                }
+                console.log('Message sent'+info.messageId);
+                rl.close();
+            });
+        }
+    }); 
+}
