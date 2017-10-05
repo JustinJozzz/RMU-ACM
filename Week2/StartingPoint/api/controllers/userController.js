@@ -34,10 +34,8 @@ exports.createUser = function(req, res) {
             else
                 res.json({ message: 'Success' });
         });
-
     }).
     catch(function(err) {
-        console.log(err);
         res.json({ message: 'Failure' });
     });
 };

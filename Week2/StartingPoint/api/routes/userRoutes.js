@@ -5,7 +5,7 @@ e.g. localhost:3000/users to get a list of users
 'use strict';
 module.exports = function(app) {
   var userControl = require('../controllers/userController');
-  var authControl = require('../controllers/authController')
+  var authControl = require('../controllers/authController');
 
   //These routes do not check auth tokens
   app.route('/signup')
@@ -15,9 +15,9 @@ module.exports = function(app) {
      .post(userControl.signIn);
 
   //verify auth token for all routes below this point
-  // app.use(authControl.verifyToken);
+  app.use(authControl.verifyToken);
 
   //get a list of all users
-  // app.route('/users')
-  //    .get(userControl.getAllUsers);
+  app.route('/users')
+     .get(userControl.getAllUsers);
 };

@@ -17,7 +17,8 @@ exports.nextID = function(name) {
                 sequence.save(function(err) {
                     if (err)
                         reject(new Error(err));
-                    resolve(nextVal);
+                    else
+                        resolve(nextVal);
                 });
             });
         }
