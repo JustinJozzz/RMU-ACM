@@ -1,14 +1,15 @@
+'use strict';
 /*
 This program gets a list of faculty members from the rmu website,
 looks them up on ratemyprofessor, and adds their rating to a json object.
 Then writes that object to a file.
 */
-const request = require("request"); //makes http get requests to get html of website
-const jsonfile = require('jsonfile') //write json object directly to file
-const jsdom = require("jsdom"); //lets us take the html we get and manipulate it
+const request = require('request'); //makes http get requests to get html of website
+const jsonfile = require('jsonfile'); //write json object directly to file
+const jsdom = require('jsdom'); //lets us take the html we get and manipulate it
 const { JSDOM } = jsdom; //pulls the JSDOM constructor out of the package
 
-var facultyUrl = 'https://sentry.rmu.edu/web/cms/Pages/faculty-profile-list.aspx';//url of the faculty profile list
+var facultyUrl = 'https://sentry.rmu.edu/web/cms/Pages/faculty-profile-list.aspx';//url of the faculty pronpfile list
 
 /*
 makes HTTP GET Request to get the html of the faculy profile list page
@@ -27,7 +28,7 @@ request(facultyUrl, function(error, response, body) {
     the faculty array.
     */
     var elements = facultyPage.window.document.getElementsByClassName('b10');
-    for(elm of elements) {
+    for(var elm of elements) {
         faculty.push({
             //split method splits string into an array based on index of the give substring argument
             firstName: elm.innerHTML.split(', ')[1].split(' ')[0],
