@@ -1,0 +1,27 @@
+{
+    "name": "ACM Schedule Helper",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "Lets you see a professor's rating when you are scheduling.",
+    "homepage_url": "https://github.com/JustinJozzz/RMU-ACM/",
+    "permissions": [ 
+        "tabs", 
+        "*://*/*", 
+        "contextMenus"
+      ],
+    "icons": {
+      "128": "icons/acm.png"
+    },
+    "browser_action": {
+      "default_title": "rate my professor",
+      "default_icon": "icons/acm.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["*://sentry.rmu.edu/*"],
+          "css": ["src/contentScript.css"],
+          "js": ["src/contentScript.js"],
+          "run_at": "document_end"
+        }
+    ]
+}
