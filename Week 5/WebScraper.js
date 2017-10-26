@@ -90,14 +90,14 @@ function getFacultyRating(faculty, index) {
                     //if some do not have a rating, their entire profile may return, filter them out
                     if(overallQuality.length < 5) {
                         //if we got their rating, set the rating property of this faculty
-                        faculty[index].overallQaulity = overallQuality.trim();
+                        faculty[index].overallQuality = overallQuality.trim();
                         faculty[index].levelOfDifficulty = (levelOfDifficulty) ? levelOfDifficulty.textContent.trim() : null;
                         faculty[index].topTags = [];
                         for(var tag of topTags) {
                             faculty[index].topTags.push(tag.textContent.split(' (')[0].trim());
                         }
                         var req = https.request({ 
-                            hostname: "acmchromeextension.firebaseio.com", 
+                            hostname: //firebase Hostname, 
                             method: "POST", 
                             path: "/faculty.json"
                         });
@@ -105,7 +105,7 @@ function getFacultyRating(faculty, index) {
                             if(err)
                                 console.log(err);
                             else
-                                console.log(faculty[index].firstName + ' ' + faculty[index].lastName + 'posted to firebase.');
+                                console.log(faculty[index].firstName + ' ' + faculty[index].lastName + ' posted to firebase.');
                         });
                     }
                     
