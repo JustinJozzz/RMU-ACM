@@ -65,8 +65,8 @@ request(firebaseURL, function(err, response, body){
                 break;
             case '5':
                 // uncomment printItem line when printItem function is implemented, and comment out console.log
-                // printItem(averageRatings(facultyList, 'quality'), 'Average Quality');
-                console.log(averageRatings(facultyList, 'quality'));
+                printItem(averageRatings(facultyList, 'quality'), 'Average Quality');
+                // console.log(averageRatings(facultyList, 'quality'));
                 break;
             case '6':
                 // uncomment printItem line when printItem function is implemented, and comment out console.log
@@ -108,7 +108,7 @@ function printItem(item, caption) {
  * Remember that faculty are objects, so to get their properties use faculty.overallQuality
  */
 function overallQuality(facultyList, category = 'low') {
-
+    console.log("hi");
 }
 
 /**
