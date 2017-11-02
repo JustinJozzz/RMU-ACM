@@ -13,7 +13,7 @@ Schedule:
 | 3      | SMTP with NodeJs | 10/05/2017 |
 | 4      | Webscraping with NodeJs | 10/12/2017 |
 | 5      | Rate My Prof. Chrome Extension | 10/26/2017 |
-| 4      | Git and Github Tutorial | 11/02/2017 |
+| 6      | Git and Github Tutorial | 11/02/2017 |
 
 Our Slack Channel: https://rmuacm.slack.com
 
